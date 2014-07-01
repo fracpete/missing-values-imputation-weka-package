@@ -3,3 +3,10 @@ pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.next
 release.properties
+dist/
+build/
+doc/
+*~
+.classpath
+.project
+.settings/
