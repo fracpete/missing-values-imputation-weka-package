@@ -150,6 +150,17 @@ public abstract class AbstractImputation
   }
 
   /**
+   * Hook method to perform some initializations before 
+   * {@link #doBuildImputation(Instances)} is called.
+   * <p/>
+   * Default implementation does nothing.
+   * 
+   * @param data	the training data
+   */
+  protected void initImputation(Instances data) {
+  }
+
+  /**
    * Performs the actual initialization of the imputation algorithm with the
    * training data.
    *
@@ -171,6 +182,7 @@ public abstract class AbstractImputation
   public Instances buildImputation(Instances data) throws Exception {
     m_OutputFormat = null;
     getCapabilities(data).testWithFail(data);
+    initImputation(data);
     m_OutputFormat = doBuildImputation(data);
     m_Initialized  = true;
     
