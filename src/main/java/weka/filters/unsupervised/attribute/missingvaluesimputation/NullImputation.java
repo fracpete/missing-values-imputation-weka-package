@@ -61,7 +61,7 @@ public class NullImputation
    */
   @Override
   protected Instances doBuildImputation(Instances data) throws Exception {
-    return new Instances(data);
+    return new Instances(data, 0);
   }
 
   /**
