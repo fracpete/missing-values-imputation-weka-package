@@ -15,15 +15,13 @@
 
 /*
  *    MissingValuesImputation.java
- *    Copyright (C) 2014 University of Waikato, Hamilton, New Zealand
+ *    Copyright (C) 2014-2016 University of Waikato, Hamilton, New Zealand
  *
  */
 
 package weka.filters.unsupervised.attribute;
 
 import weka.core.Capabilities;
-import weka.core.Capabilities.Capability;
-import weka.core.CapabilitiesHandler;
 import weka.core.Instances;
 import weka.core.Option;
 import weka.core.RevisionUtils;
@@ -71,8 +69,11 @@ public class MissingValuesImputation
   /** for serialization */
   private final static long serialVersionUID = 8349568310991609867L;
 
+  /** the flag for the algorithm. */
+  public final static String ALGORITHM = "algorithm";
+
   /** The imputation algorithm to use. */
-  protected Imputation m_Algorithm = new NullImputation();
+  protected Imputation m_Algorithm = getDefaultAlgorithm();
   
   /**
    * Returns a string describing this filter
@@ -96,8 +97,8 @@ public class MissingValuesImputation
 
     result.addElement(new Option(
       "\tThe imputation algorithm to use.\n"
-        + "\t(default: " + NullImputation.class.getName() + ")", 
-        "algorithm", 1, "-algorithm <classname + options>"));
+        + "\t(default: " + getDefaultAlgorithm().getClass().getName() + ")",
+        ALGORITHM, 1, "-" + ALGORITHM + " <classname + options>"));
 
     result.addAll(Collections.list(super.listOptions()));
 
@@ -113,7 +114,7 @@ public class MissingValuesImputation
   public String[] getOptions() {
     List<String> result = new ArrayList<String>();
     
-    result.add("-algorithm");
+    result.add("-" + ALGORITHM);
     result.add("" + Utils.toCommandLine(getAlgorithm()));
 
     Collections.addAll(result, super.getOptions());
@@ -151,20 +152,30 @@ public class MissingValuesImputation
     String[] 	tmpOptions;
     Imputation 	imp;
 
-    tmpStr = Utils.getOption("algorithm", options);
+    tmpStr = Utils.getOption(ALGORITHM, options);
     if (!tmpStr.isEmpty()) {
       tmpOptions = Utils.splitOptions(tmpStr);
       tmpStr = tmpOptions[0];
       tmpOptions[0] = "";
       imp = (Imputation) Utils.forName(Imputation.class, tmpStr, tmpOptions);
       setAlgorithm(imp);
-    } else {
-      setAlgorithm(new NullImputation());
+    }
+    else {
+      setAlgorithm(getDefaultAlgorithm());
     }
 
     super.setOptions(options);
 
     Utils.checkForRemainingOptions(options);
+  }
+
+  /**
+   * Returns the default imputation algorithm.
+   *
+   * @return the default
+   */
+  protected Imputation getDefaultAlgorithm() {
+    return new NullImputation();
   }
 
   /**
@@ -203,26 +214,7 @@ public class MissingValuesImputation
    */
   @Override
   public Capabilities getCapabilities() {
-    Capabilities 	result;
-    
-    if (m_Algorithm instanceof CapabilitiesHandler) {
-      result = ((CapabilitiesHandler) m_Algorithm).getCapabilities();
-    }
-    else {
-      result = super.getCapabilities();
-      result.disableAll();
-
-      // attributes
-      result.enableAllAttributes();
-      result.enable(Capability.MISSING_VALUES);
-
-      // class
-      result.enableAllClasses();
-      result.enable(Capability.MISSING_CLASS_VALUES);
-      result.enable(Capability.NO_CLASS);
-    }
-
-    return result;
+    return m_Algorithm.getCapabilities();
   }
 
   /**
