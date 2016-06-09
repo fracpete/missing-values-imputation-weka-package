@@ -15,21 +15,25 @@
 
 /*
  *    Imputation.java
- *    Copyright (C) 2014 University of Waikato, Hamilton, New Zealand
+ *    Copyright (C) 2014-2016 University of Waikato, Hamilton, New Zealand
  *
  */
 
 package weka.filters.unsupervised.attribute.missingvaluesimputation;
 
+import weka.core.CapabilitiesHandler;
 import weka.core.Instance;
 import weka.core.Instances;
+
+import java.io.Serializable;
 
 /** 
  * Interface for imputation algorithms.
  * 
  * @author FracPete (fracpete at waikato dot ac dot nz)
  */
-public interface Imputation {
+public interface Imputation
+  extends Serializable, CapabilitiesHandler {
 
   /**
    * Returns general information on the algorithm.

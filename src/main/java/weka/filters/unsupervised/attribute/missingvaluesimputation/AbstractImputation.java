@@ -15,25 +15,23 @@
 
 /*
  *    AbstractImputation.java
- *    Copyright (C) 2014 University of Waikato, Hamilton, New Zealand
+ *    Copyright (C) 2014-2016 University of Waikato, Hamilton, New Zealand
  *
  */
 
 package weka.filters.unsupervised.attribute.missingvaluesimputation;
 
-import java.io.Serializable;
-import java.util.Enumeration;
-import java.util.Iterator;
-import java.util.Vector;
-
 import weka.core.Capabilities;
 import weka.core.Capabilities.Capability;
-import weka.core.CapabilitiesHandler;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.Option;
 import weka.core.OptionHandler;
 import weka.core.WekaException;
+
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Vector;
 
 /** 
  * Ancestor for imputation algorithms.
@@ -41,7 +39,7 @@ import weka.core.WekaException;
  * @author FracPete (fracpete at waikato dot ac dot nz)
  */
 public abstract class AbstractImputation
-  implements Imputation, OptionHandler, CapabilitiesHandler, Serializable {
+  implements Imputation, OptionHandler {
 
   /** for serialization. */
   private static final long serialVersionUID = 8509594940625168327L;
