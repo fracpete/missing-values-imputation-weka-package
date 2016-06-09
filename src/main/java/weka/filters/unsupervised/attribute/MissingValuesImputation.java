@@ -21,12 +21,6 @@
 
 package weka.filters.unsupervised.attribute;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Vector;
-
 import weka.core.Capabilities;
 import weka.core.Capabilities.Capability;
 import weka.core.CapabilitiesHandler;
@@ -39,14 +33,20 @@ import weka.filters.UnsupervisedFilter;
 import weka.filters.unsupervised.attribute.missingvaluesimputation.Imputation;
 import weka.filters.unsupervised.attribute.missingvaluesimputation.NullImputation;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.Vector;
+
 /** 
  <!-- globalinfo-start -->
  * Replaces missing values using the specified imputation algorithm.
- * <p/>
+ * <br><br>
  <!-- globalinfo-end -->
  *
  <!-- options-start -->
- * Valid options are: <p/>
+ * Valid options are: <br><br>
  * 
  * <pre> -algorithm &lt;classname + options&gt;
  *  The imputation algorithm to use.
@@ -123,10 +123,10 @@ public class MissingValuesImputation
 
   /**
    * Parses a given list of options.
-   * <p/>
+   * <br><br>
    * 
    * <!-- options-start -->
-   * * Valid options are: <p/>
+   * * Valid options are: <br><br>
    * * 
    * * <pre> -algorithm &lt;classname + options&gt;
    * *  The imputation algorithm to use.

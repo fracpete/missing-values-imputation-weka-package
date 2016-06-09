@@ -32,7 +32,7 @@ import weka.core.Utils;
 /** 
  * <!-- globalinfo-start -->
  * * Replaces all missing values for nominal and numeric attributes in a dataset with the modes and means from the training data.
- * * <p/>
+ * * <br><br>
  * <!-- globalinfo-end -->
  * 
  * <!-- options-start -->
