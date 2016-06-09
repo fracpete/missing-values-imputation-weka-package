@@ -1,13 +1,58 @@
 How to make a release
 =====================
 
-* Run the following command to generate the package archive for version `1.0.0`:
+Preparation
+-----------
 
-  <pre>
-  ant -f build_package.xml -Dpackage=missing-values-imputation-1.0.0 clean make_package
-  </pre>
+* Change the artifact ID in `pom.xml` to today's date, e.g.:
 
-* Create a release tag on github (v1.0.0)
+  ```
+  2016.6.6-SNAPSHOT
+  ```
+
+* Update the version, date and URL in `Description.props` to reflect new
+  version, e.g.:
+
+  ```
+  Version=2016.6.6
+  Date=2016-06-06
+  PackageURL=https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.6/missing-values-imputation-2016.6.6.zip
+  ```
+
+* Commit/push all changes
+
+
+Weka package
+------------
+
+* Run the following command to generate the package archive for version
+  `2016.6.6`:
+
+  ```
+  ant -f build_package.xml -Dpackage=missing-values-imputation-2016.6.6 clean make_package
+  ```
+
+* Create a release tag on github (`v2016.6.6`)
 * add release notes
 * upload package archive from `dist`
+* add link to this zip file in the `Releases` section of the `README.md` file
+
+
+Maven Central
+-------------
+
+* Run the following command to deploy the artifact:
+
+  ```
+  mvn release:clean release:prepare release:perform
+  ```
+
+* After successful deployment, push the changes out:
+
+  ```
+  git push
+  ```
+
+* After the artifacts show up on central, update the artifact version used
+  in the dependency fragment of the `README.md` file
 

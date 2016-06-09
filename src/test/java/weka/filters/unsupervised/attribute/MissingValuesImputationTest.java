@@ -14,7 +14,7 @@
  */
 
 /*
- * Copyright (C) 2002-2014 University of Waikato 
+ * Copyright (C) 2002-2016 University of Waikato
  */
 
 package weka.filters.unsupervised.attribute;
@@ -51,7 +51,8 @@ public class MissingValuesImputationTest
    * @param name 	the name of the test
    */
   public MissingValuesImputationTest(String name) { 
-    super(name);  
+    super(name);
+    System.setProperty("weka.test.Regression.root", "src/test/resources");
   }
 
   /**

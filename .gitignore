@@ -10,3 +10,5 @@ doc/
 .classpath
 .project
 .settings/
+.idea/
+*.iml
