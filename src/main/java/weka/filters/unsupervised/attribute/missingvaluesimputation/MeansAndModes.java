@@ -74,7 +74,9 @@ public class MeansAndModes
     result.disableAll();
 
     // attributes
-    result.enableAllAttributes();
+    result.enable(Capability.NUMERIC_ATTRIBUTES);
+    result.enable(Capability.DATE_ATTRIBUTES);
+    result.enable(Capability.NOMINAL_ATTRIBUTES);
     result.enable(Capability.MISSING_VALUES);
     
     // class
