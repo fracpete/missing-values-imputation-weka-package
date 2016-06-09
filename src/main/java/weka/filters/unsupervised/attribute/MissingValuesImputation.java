@@ -124,25 +124,7 @@ public class MissingValuesImputation
 
   /**
    * Parses a given list of options.
-   * <br><br>
-   * 
-   * <!-- options-start -->
-   * * Valid options are: <br><br>
-   * * 
-   * * <pre> -algorithm &lt;classname + options&gt;
-   * *  The imputation algorithm to use.
-   * *  (default: weka.filters.unsupervised.attribute.missingvaluesimputation.NullImputation)</pre>
-   * * 
-   * * <pre> -output-debug-info
-   * *  If set, filter is run in debug mode and
-   * *  may output additional info to the console</pre>
-   * * 
-   * * <pre> -do-not-check-capabilities
-   * *  If set, filter capabilities are not checked when input format is set
-   * *  (use with caution).</pre>
-   * * 
-   * <!-- options-end -->
-   * 
+   *
    * @param options the list of options as an array of strings
    * @throws Exception if an option is not supported
    */
