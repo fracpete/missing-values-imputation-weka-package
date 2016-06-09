@@ -25,13 +25,13 @@ import weka.core.Instance;
 import weka.core.Instances;
 
 /** 
- * <!-- globalinfo-start -->
- * * Dummy, performs no imputation.
- * * <br><br>
- * <!-- globalinfo-end -->
+ <!-- globalinfo-start -->
+ * Dummy, performs no imputation.
+ * <br><br>
+ <!-- globalinfo-end -->
  * 
- * <!-- options-start -->
- * <!-- options-end -->
+ <!-- options-start -->
+ <!-- options-end -->
  * 
  * @author FracPete (fracpete at waikato dot ac dot nz)
  */

@@ -33,18 +33,18 @@ import java.util.List;
 import java.util.Vector;
 
 /**
- * <!-- globalinfo-start -->
- * * Applies the specified imputation algorithms one after the other.
- * * <br><br>
- * <!-- globalinfo-end -->
+ <!-- globalinfo-start -->
+ * Applies the specified imputation algorithms one after the other.
+ * <br><br>
+ <!-- globalinfo-end -->
  *
- * <!-- options-start -->
- * * Valid options are: <p>
- * * 
- * * <pre> -algorithm &lt;classname + options&gt;
- * *  The imputation algorithms to use (can be supplied multiple times).</pre>
- * * 
- * <!-- options-end -->
+ <!-- options-start -->
+ * Valid options are: <p>
+ *
+ * <pre> -algorithm &lt;classname + options&gt;
+ *  The imputation algorithms to use (can be supplied multiple times).</pre>
+ *
+ <!-- options-end -->
  *
  * @author FracPete (fracpete at waikato dot ac dot nz)
  * @version $Revision$

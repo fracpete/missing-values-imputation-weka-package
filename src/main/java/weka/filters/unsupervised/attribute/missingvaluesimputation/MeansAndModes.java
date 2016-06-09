@@ -30,13 +30,13 @@ import weka.core.SparseInstance;
 import weka.core.Utils;
 
 /** 
- * <!-- globalinfo-start -->
- * * Replaces all missing values for nominal and numeric attributes in a dataset with the modes and means from the training data.
- * * <br><br>
- * <!-- globalinfo-end -->
- * 
- * <!-- options-start -->
- * <!-- options-end -->
+ <!-- globalinfo-start -->
+ * Replaces all missing values for nominal and numeric attributes in a dataset with the modes and means from the training data.
+ * <br><br>
+ <!-- globalinfo-end -->
+ *
+ <!-- options-start -->
+ <!-- options-end -->
  * 
  * @author Eibe Frank (eibe@cs.waikato.ac.nz) 
  * @author FracPete (fracpete at waikato dot ac dot nz)
