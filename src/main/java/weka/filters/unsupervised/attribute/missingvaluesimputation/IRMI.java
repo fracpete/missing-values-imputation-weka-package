@@ -14,7 +14,7 @@
  */
 
 /**
- * UserSuppliedValues.java
+ * IRMI.java
  * Copyright (C) 2016 University of Waikato, Hamilton, NZ
  */
 
@@ -92,6 +92,7 @@ import java.util.Vector;
  * 
  <!-- options-end -->
  *
+ * @author Chris Beckham
  * @author FracPete (fracpete at waikato dot ac dot nz)
  * @version $Revision$
  */
