@@ -68,12 +68,21 @@ public abstract class AbstractImputationTest
    * @throws Exception if an error occurs
    */
   protected void setUp() throws Exception {
+    String	classIndex;
+
     super.setUp();
 
     m_Imputation   = getImputation();
-    m_Instances    = new Instances(new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(getDefaultDataset()))));
     m_OptionTester = getOptionTester();
     m_GOETester    = getGOETester();
+    m_Instances    = new Instances(new BufferedReader(new InputStreamReader(ClassLoader.getSystemResourceAsStream(getDefaultDataset()))));
+    classIndex     = getDefaultClassIndex();
+    if (classIndex.equals("first"))
+      m_Instances.setClassIndex(0);
+    else if (classIndex.equals("last"))
+      m_Instances.setClassIndex(m_Instances.numAttributes() - 1);
+    else if (!classIndex.isEmpty())
+      m_Instances.setClassIndex(Integer.parseInt(classIndex) - 1);
   }
 
   /**
@@ -96,7 +105,16 @@ public abstract class AbstractImputationTest
    * @return the path
    */
   protected abstract String getDefaultDataset();
-  
+
+  /**
+   * Returns the class index of the default dataset.
+   *
+   * @return the class index
+   */
+  protected String getDefaultClassIndex() {
+    return "";
+  }
+
   /**
    * Configures the CheckOptionHandler uses for testing the optionhandling.
    * Sets the scheme to test.
