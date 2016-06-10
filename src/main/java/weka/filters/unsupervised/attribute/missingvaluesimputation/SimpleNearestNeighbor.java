@@ -381,6 +381,9 @@ public class SimpleNearestNeighbor
 	    }
 	    result.setValueSparse(missing.get(i), att.indexOfValue(label));
 	    break;
+
+	  default:
+	    throw new IllegalStateException("Unhandled attribute type: " + Attribute.typeToString(att.type()));
 	}
       }
     }
