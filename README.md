@@ -11,6 +11,9 @@ Implemented techniques:
 * `SimpleNearestNeighbor` - uses nearest neighbor approach to determine most 
    common label or average (date/numeric)
 * `UserSuppliedValues` - simply replaces missing values with user-supplied ones
+* `IRMI` - [M. Templ et al (2011): Iterative stepwise regression imputation 
+   using standard and robust methods](http://www.statistik.tuwien.ac.at/public/filz/papers/CSDA11TKF.pdf)
+   (contributed by Chris Beckham)
 
 
 Releases
