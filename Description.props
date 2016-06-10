@@ -5,10 +5,10 @@
 PackageName=missing-values-imputation
 
 # Version (required)
-Version=2016.6.9
+Version=2016.6.10
 
 #Date (year-month-day)
-Date=2016-06-09
+Date=2016-06-10
 
 # Title (required)
 Title=Missing Values Imputation
@@ -29,7 +29,7 @@ License=GPL 3.0
 Description=Contains various algorithms for missing values imputation.
 
 # Package URL for obtaining the package archive (required)
-PackageURL=https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.9/missing-values-imputation-2016.6.9.zip
+PackageURL=https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.10/missing-values-imputation-2016.6.10.zip
 
 # URL for further information
 URL=https://github.com/fracpete/missing-values-imputation-weka-package
