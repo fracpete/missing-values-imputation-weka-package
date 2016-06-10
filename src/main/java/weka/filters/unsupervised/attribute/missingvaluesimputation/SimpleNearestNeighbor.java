@@ -51,7 +51,7 @@ import java.util.Vector;
  * Valid options are: <p>
  * 
  * <pre> -search &lt;classname + options&gt;
- *  The nearest neighbor search algorithm.
+ *  The nearest neighbor search algorithm to use.
  *  (default: weka.core.neighboursearch.LinearNNSearch)</pre>
  * 
  * <pre> -num-neighbors &lt;int&gt;
@@ -107,12 +107,12 @@ public class SimpleNearestNeighbor
     Vector<Option> result = new Vector<Option>();
 
     result.addElement(new Option(
-      "\tThe nearest neighbor search algorithm.\n"
+      "\t" + searchTipText() + "\n"
       + "\t(default: " + getDefaultSearch().getClass().getName() + ")",
       SEARCH, 1, "-" + SEARCH + " <classname + options>"));
 
     result.addElement(new Option(
-      "\tThe size of the neighborhood to use.\n"
+      "\t" + numNeighborsTipText() + "\n"
       + "\t(default: " + getDefaultNumNeighbors() + ")",
       NUM_NEIGHBORS, 1, "-" + NUM_NEIGHBORS + " <int>"));
 
