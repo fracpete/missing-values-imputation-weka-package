@@ -15,20 +15,20 @@
 
 /**
  * AbstractImputationWithRange.java
- * Copyright (C) 2014 University of Waikato, Hamilton, New Zealand
+ * Copyright (C) 2014-2016 University of Waikato, Hamilton, New Zealand
  */
 package weka.filters.unsupervised.attribute.missingvaluesimputation;
+
+import weka.core.Instances;
+import weka.core.Option;
+import weka.core.Range;
+import weka.core.Utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Vector;
-
-import weka.core.Instances;
-import weka.core.Option;
-import weka.core.Range;
-import weka.core.Utils;
 
 /**
  * Ancestor for imputation algorithms that work on a range of attributes only.
@@ -41,9 +41,15 @@ public abstract class AbstractImputationWithRange
 
   /** for serialization. */
   private static final long serialVersionUID = 3787465264006307917L;
-  
+
+  /** the flag for the range. */
+  public final static String RANGE = "R";
+
+  /** the flag for inverting the matching. */
+  public final static String INVERT_MATCHING = "V";
+
   /** the range of attributes to work on. */
-  protected Range m_Cols = new Range("first-last");
+  protected Range m_Cols = new Range(getDefaultAttributeIndices());
   
   /** the indices to work on. */
   protected int[] m_Indices;
@@ -58,13 +64,13 @@ public abstract class AbstractImputationWithRange
     Vector<Option> result = new Vector<Option>();
 
     result.addElement(new Option(
-      "\tThe list of columns to work on, e.g., 'first-last' or 'first-3,5-last'.\n"
-        + "\t(default: first-last)", 
-        "R", 1, "-R <col1,col2,...>"));
+      "\t" + attributeIndicesTipText() + ".\n"
+        + "\t(default: " + getDefaultAttributeIndices() + ")",
+        RANGE, 1, "-" + RANGE + " <col1,col2,...>"));
 
     result.addElement(new Option(
 	"\tInverts the matching sense.", 
-	"V", 0, "-V"));
+	INVERT_MATCHING, 0, "-" + INVERT_MATCHING));
 
     result.addAll(Collections.list(super.listOptions()));
 
@@ -80,11 +86,11 @@ public abstract class AbstractImputationWithRange
   public String[] getOptions() {
     List<String> result = new ArrayList<String>();
 
-    result.add("-R");
+    result.add("-" + RANGE);
     result.add("" + m_Cols.getRanges());
 
     if (m_Cols.getInvert())
-      result.add("-V");
+      result.add("-" + INVERT_MATCHING);
 
     Collections.addAll(result, super.getOptions());
 
@@ -101,18 +107,26 @@ public abstract class AbstractImputationWithRange
   public void setOptions(String[] options) throws Exception {
     String 	tmpStr;
 
-    tmpStr = Utils.getOption("R", options);
-    if (tmpStr.length() != 0) {
+    tmpStr = Utils.getOption(RANGE, options);
+    if (tmpStr.length() != 0)
       setAttributeIndices(tmpStr);
-    } else {
-      setAttributeIndices("first-last");
-    }
+    else
+      setAttributeIndices(getDefaultAttributeIndices());
 
-    setInvertSelection(Utils.getFlag("V", options));
+    setInvertSelection(Utils.getFlag(INVERT_MATCHING, options));
 
     super.setOptions(options);
 
     Utils.checkForRemainingOptions(options);
+  }
+
+  /**
+   * Returns the default indices.
+   *
+   * @return the default
+   */
+  protected String getDefaultAttributeIndices() {
+    return "first-last";
   }
 
   /**
