@@ -5,7 +5,7 @@
 
   <groupId>com.github.fracpete</groupId>
   <artifactId>missing-values-imputation-weka-package</artifactId>
-  <version>2016.6.10-SNAPSHOT</version>
+  <version>2016.6.10</version>
   <packaging>jar</packaging>
 
   <name>missing-values-imputation</name>
