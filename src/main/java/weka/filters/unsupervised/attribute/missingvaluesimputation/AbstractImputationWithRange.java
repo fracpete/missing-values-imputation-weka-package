@@ -108,7 +108,7 @@ public abstract class AbstractImputationWithRange
     String 	tmpStr;
 
     tmpStr = Utils.getOption(RANGE, options);
-    if (tmpStr.length() != 0)
+    if (!tmpStr.isEmpty())
       setAttributeIndices(tmpStr);
     else
       setAttributeIndices(getDefaultAttributeIndices());
