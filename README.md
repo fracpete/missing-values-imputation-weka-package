@@ -10,6 +10,7 @@ Implemented techniques:
 * `MultiImputation` - applies the specified imputation algorithms sequentially
 * `SimpleNearestNeighbor` - uses nearest neighbor approach to determine most 
    common label or average (date/numeric)
+* `UserSuppliedValues` - simply replaces missing values with user-supplied ones
 
 
 Releases
