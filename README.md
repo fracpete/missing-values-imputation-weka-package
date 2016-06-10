@@ -21,6 +21,7 @@ Releases
 
 Click on one of the following links to download the corresponding Weka package:
 
+* [2016.6.10](https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.10/missing-values-imputation-2016.6.10.zip)
 * [2016.6.9](https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.9/missing-values-imputation-2016.6.9.zip)
 
 
@@ -41,7 +42,7 @@ Add the following dependency in your `pom.xml` to include the package:
     <dependency>
       <groupId>com.github.fracpete</groupId>
       <artifactId>missing-values-imputation-weka-package</artifactId>
-      <version>2016.6.9</version>
+      <version>2016.6.10</version>
       <type>jar</type>
       <exclusions>
         <exclusion>
