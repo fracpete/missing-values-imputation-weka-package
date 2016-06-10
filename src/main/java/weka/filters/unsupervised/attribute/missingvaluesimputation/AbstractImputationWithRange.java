@@ -27,6 +27,7 @@ import weka.core.Utils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Vector;
 
@@ -53,6 +54,9 @@ public abstract class AbstractImputationWithRange
   
   /** the indices to work on. */
   protected int[] m_Indices;
+
+  /** the hashet of the indices to work on. */
+  protected HashSet<Integer> m_IndicesSet;
 
   /**
    * Returns an enumeration describing the available options.
@@ -196,5 +200,8 @@ public abstract class AbstractImputationWithRange
     super.initImputation(data);
     m_Cols.setUpper(data.numAttributes() - 1);
     m_Indices = m_Cols.getSelection();
+    m_IndicesSet = new HashSet<Integer>();
+    for (int index: m_Indices)
+      m_IndicesSet.add(index);
   }
 }
