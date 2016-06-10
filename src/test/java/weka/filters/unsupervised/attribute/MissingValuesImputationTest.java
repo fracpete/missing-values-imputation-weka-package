@@ -25,7 +25,6 @@ import weka.core.Attribute;
 import weka.core.Instances;
 import weka.filters.AbstractFilterTest;
 import weka.filters.Filter;
-import weka.filters.unsupervised.attribute.missingvaluesimputation.MeansAndModes;
 import weka.filters.unsupervised.attribute.missingvaluesimputation.NullImputation;
 
 /**
@@ -87,39 +86,6 @@ public class MissingValuesImputationTest
                          inatt.value((int)m_Instances.instance(i).value(j)),
                          outatt.value((int)result.instance(i).value(j)));
           }
-        }
-      }
-    }
-  }
-
-  /**
-   * Tests the filter using {@link MeansAndModes}.
-   */
-  public void testMeansAndModes() {
-    m_Filter = new MissingValuesImputation();
-    ((MissingValuesImputation) m_Filter).setAlgorithm(new MeansAndModes());
-    Instances result = useFilter();
-    // Number of attributes and instances shouldn't change
-    assertEquals(m_Instances.numAttributes(), result.numAttributes());
-    assertEquals(m_Instances.numInstances(), result.numInstances());
-    for (int j = 0; j < m_Instances.numAttributes(); j++) {
-      Attribute inatt = m_Instances.attribute(j);
-      Attribute outatt = result.attribute(j);
-      for (int i = 0; i < m_Instances.numInstances(); i++) {
-        if (m_Instances.attribute(j).isString()) {
-          if (m_Instances.instance(i).isMissing(j)) {
-            assertTrue("Missing values in strings cannot be replaced",
-                   result.instance(i).isMissing(j));
-          } 
-          else {
-            assertEquals("String values should not have changed",
-                         inatt.value((int)m_Instances.instance(i).value(j)),
-                         outatt.value((int)result.instance(i).value(j)));
-          }
-        } 
-        else {
-          assertTrue("All non-string missing values should have been replaced",
-                 !result.instance(i).isMissing(j));
         }
       }
     }
