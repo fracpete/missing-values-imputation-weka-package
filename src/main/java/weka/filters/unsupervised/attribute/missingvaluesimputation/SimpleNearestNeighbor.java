@@ -299,7 +299,7 @@ public class SimpleNearestNeighbor
    * @param vector the list
    * @return the mean
    */
-  public static double mean(List<Double> vector) {
+  protected double mean(List<Double> vector) {
     double sum = 0;
 
     if (vector.size() == 0)
