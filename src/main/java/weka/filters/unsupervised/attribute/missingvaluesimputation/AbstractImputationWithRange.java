@@ -158,7 +158,7 @@ public abstract class AbstractImputationWithRange
    *         explorer/experimenter gui
    */
   public String attributeIndicesTipText() {
-    return "The selection of columns to use in the imputation processs, 'first' and 'last' are valid indices.";
+    return "The selection of columns to use in the imputation process, 'first' and 'last' are valid indices.";
   }
 
   /**
