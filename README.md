@@ -3,7 +3,8 @@ Missing Values Imputation
 
 Weka package for missing values imputation using various techniques.
 
-Implemented techniques:
+The techniques listed below are available through the 
+`weka.filters.unsupervised.attribute.MissingValuesImputation` filter: 
 
 * `NullImputation` - dummy
 * `MeansAndModes` - like WEKA's `ReplaceMissingValues` filter
