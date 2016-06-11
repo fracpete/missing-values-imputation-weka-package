@@ -28,6 +28,7 @@ The techniques listed below are available through the
 
 * `NullInjection` - dummy
 * `MultiInjection` - applies the specified injection algorithms sequentially
+* `AllWithinRange` - set all specified attributes to missing 
 
 
 Releases
