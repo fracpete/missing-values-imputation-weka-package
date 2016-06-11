@@ -27,6 +27,7 @@ The techniques listed below are available through the
 `weka.filters.unsupervised.attribute.MissingValuesInjection` filter: 
 
 * `NullInjection` - dummy
+* `MultiInjection` - applies the specified injection algorithms sequentially
 
 
 Releases
