@@ -12,3 +12,5 @@
 
 weka.filters.unsupervised.attribute.missingvaluesimputation.Imputation=weka.gui.GenericObjectEditor
 weka.filters.unsupervised.attribute.missingvaluesimputation.Imputation[]=weka.gui.GenericArrayEditor
+weka.filters.unsupervised.attribute.missingvaluesinjection.Injection=weka.gui.GenericObjectEditor
+weka.filters.unsupervised.attribute.missingvaluesinjection.Injection[]=weka.gui.GenericArrayEditor

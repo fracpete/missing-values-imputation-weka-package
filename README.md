@@ -1,7 +1,10 @@
 Missing Values Imputation
 =========================
 
-Weka package for missing values imputation using various techniques.
+Weka package for missing values imputation (and injection) using various techniques.
+
+Imputation
+----------
 
 The techniques listed below are available through the 
 `weka.filters.unsupervised.attribute.MissingValuesImputation` filter: 
@@ -15,6 +18,15 @@ The techniques listed below are available through the
 * `IRMI` - [M. Templ et al (2011): Iterative stepwise regression imputation 
    using standard and robust methods](http://www.statistik.tuwien.ac.at/public/filz/papers/CSDA11TKF.pdf)
    (contributed by [Chris Beckham](https://github.com/christopher-beckham/weka-fimi))
+
+
+Injection
+---------
+
+The techniques listed below are available through the 
+`weka.filters.unsupervised.attribute.MissingValuesInjection` filter: 
+
+* `NullInjection` - dummy
 
 
 Releases
