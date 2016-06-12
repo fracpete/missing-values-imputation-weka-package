@@ -5,11 +5,11 @@
 
   <groupId>com.github.fracpete</groupId>
   <artifactId>missing-values-imputation-weka-package</artifactId>
-  <version>2016.6.11-SNAPSHOT</version>
+  <version>2016.6.12-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>missing-values-imputation</name>
-  <description>Contains various algorithms for missing values imputation.</description>
+  <description>Contains various algorithms for missing values imputation and injection.</description>
   <url>https://github.com/fracpete/missing-values-imputation-weka-package</url>
   <organization>
     <name>University of Waikato, Hamilton, NZ</name>
