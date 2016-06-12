@@ -3,10 +3,16 @@ Missing Values Imputation
 
 Weka package for missing values imputation (and injection) using various techniques.
 
+The following two filters are available:
+
+* `weka.filters.unsupervised.attribute.MissingValuesImputation` - for imputing missing values
+* `weka.filters.unsupervised.attribute.MissingValuesInjection` - for injecting missing values
+
+
 Imputation
 ----------
 
-The techniques listed below are available through the 
+The imputation techniques listed below are available through the 
 `weka.filters.unsupervised.attribute.MissingValuesImputation` filter: 
 
 * `NullImputation` - dummy
@@ -23,7 +29,7 @@ The techniques listed below are available through the
 Injection
 ---------
 
-The techniques listed below are available through the 
+The injection techniques listed below are available through the 
 `weka.filters.unsupervised.attribute.MissingValuesInjection` filter: 
 
 * `NullInjection` - dummy
