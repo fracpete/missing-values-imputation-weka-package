@@ -44,6 +44,7 @@ Releases
 
 Click on one of the following links to download the corresponding Weka package:
 
+* [2016.6.12](https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.12/missing-values-imputation-2016.6.12.zip)
 * [2016.6.10](https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.10/missing-values-imputation-2016.6.10.zip)
 * [2016.6.9](https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.9/missing-values-imputation-2016.6.9.zip)
 
@@ -65,7 +66,7 @@ Add the following dependency in your `pom.xml` to include the package:
     <dependency>
       <groupId>com.github.fracpete</groupId>
       <artifactId>missing-values-imputation-weka-package</artifactId>
-      <version>2016.6.10</version>
+      <version>2016.6.12</version>
       <type>jar</type>
       <exclusions>
         <exclusion>
@@ -76,3 +77,9 @@ Add the following dependency in your `pom.xml` to include the package:
     </dependency>
 ```
 
+Please note, when using Maven you may have to register the imputation/injection 
+class hierarchies with Weka's GenericObjectEditor if you want to use them in the
+GUI as well. See the following files:
+
+* `GenericPropertiesCreator.props`
+* `GUIEditors.props`
