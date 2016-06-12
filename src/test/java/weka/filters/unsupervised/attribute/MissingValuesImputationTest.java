@@ -25,20 +25,13 @@ import weka.core.Attribute;
 import weka.core.Instances;
 import weka.filters.AbstractFilterTest;
 import weka.filters.Filter;
-import weka.filters.unsupervised.attribute.missingvaluesimputation.NullImputation;
 
 /**
  * Tests MissingValuesImputation. Run from the command line with:
  * <pre>
  * java weka.filters.unsupervised.attribute.MissingValuesImputationTest
  * </pre>
- * Use the following parameter for the JVM to set the correct directory
- * for the regression reference files:
- * <pre>
- * -Dweka.test.Regression.root=src/test/resources
- * </pre>
  *
- * @author Len Trigg
  * @author FracPete (fracpete at waikato dot ac dot nz)
  */
 public class MissingValuesImputationTest
@@ -65,7 +58,7 @@ public class MissingValuesImputationTest
   }
 
   /**
-   * Tests the default setup, ie {@link NullImputation}.
+   * Tests the default setup.
    */
   public void testTypical() {
     Instances result = useFilter();
