@@ -201,7 +201,7 @@ public abstract class AbstractImputation
     Instances result;
     int i;
 
-    result = new Instances(data, data.numInstances());
+    result = new Instances(m_OutputFormat, data.numInstances());
     for (i = 0; i < data.numInstances(); i++)
       result.add(doImpute(data.instance(i)));
 
