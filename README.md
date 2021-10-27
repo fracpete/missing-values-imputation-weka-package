@@ -37,6 +37,7 @@ The injection techniques listed below are available through the
 * `AllWithinRange` - set all specified attributes to missing 
 * `ClassOnly` - only sets the class values to missing
 * `RandomPercentage` - sets random percentage of values in selected attribute range to missing
+* `Values` - replaces the specified strings in nominal and string attributes 
 
 
 Releases
