@@ -201,7 +201,7 @@ public abstract class AbstractInjection
     Instances result;
     int i;
 
-    result = new Instances(data, data.numInstances());
+    result = new Instances(m_OutputFormat, data.numInstances());
     for (i = 0; i < data.numInstances(); i++)
       result.add(doInject(data.instance(i)));
 
