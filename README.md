@@ -84,5 +84,5 @@ Please note, when using Maven you may have to register the imputation/injection
 class hierarchies with Weka's GenericObjectEditor if you want to use them in the
 GUI as well. See the following files:
 
-* `GenericPropertiesCreator.props`
-* `GUIEditors.props`
+* [GenericPropertiesCreator.props](GenericPropertiesCreator.props)
+* [GUIEditors.props](GUIEditors.props)
