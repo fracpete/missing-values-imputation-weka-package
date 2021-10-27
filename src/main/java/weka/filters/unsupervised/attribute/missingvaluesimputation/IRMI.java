@@ -13,9 +13,9 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
+/*
  * IRMI.java
- * Copyright (C) 2016 University of Waikato, Hamilton, NZ
+ * Copyright (C) 2016-2021 University of Waikato, Hamilton, NZ
  */
 
 package weka.filters.unsupervised.attribute.missingvaluesimputation;
@@ -94,7 +94,6 @@ import java.util.Vector;
  *
  * @author Chris Beckham
  * @author FracPete (fracpete at waikato dot ac dot nz)
- * @version $Revision$
  */
 public class IRMI
   extends AbstractImputation
@@ -274,8 +273,6 @@ public class IRMI
       setEpsilon(getDefaultEpsilon());
 
     super.setOptions(options);
-
-    Utils.checkForRemainingOptions(options);
   }
 
   /**

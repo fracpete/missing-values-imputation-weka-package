@@ -15,7 +15,7 @@
 
 /*
  *    AbstractImputation.java
- *    Copyright (C) 2014-2016 University of Waikato, Hamilton, New Zealand
+ *    Copyright (C) 2014-2021 University of Waikato, Hamilton, New Zealand
  *
  */
 
@@ -27,6 +27,7 @@ import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.Option;
 import weka.core.OptionHandler;
+import weka.core.Utils;
 import weka.core.WekaException;
 
 import java.util.Enumeration;
@@ -86,6 +87,7 @@ public abstract class AbstractImputation
    */
   @Override
   public void setOptions(String[] options) throws Exception {
+    Utils.checkForRemainingOptions(options);
   }
 
   /**

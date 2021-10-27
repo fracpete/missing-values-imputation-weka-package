@@ -13,9 +13,9 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
+/*
  * MultiInjection.java
- * Copyright (C) 2016 University of Waikato, Hamilton, NZ
+ * Copyright (C) 2016-2021 University of Waikato, Hamilton, NZ
  */
 
 package weka.filters.unsupervised.attribute.missingvaluesinjection;
@@ -47,7 +47,6 @@ import java.util.Vector;
  <!-- options-end -->
  *
  * @author FracPete (fracpete at waikato dot ac dot nz)
- * @version $Revision$
  */
 public class MultiInjection
   extends AbstractInjection {
@@ -135,8 +134,6 @@ public class MultiInjection
     setAlgorithms(imps.toArray(new Injection[imps.size()]));
 
     super.setOptions(options);
-
-    Utils.checkForRemainingOptions(options);
   }
 
   /**

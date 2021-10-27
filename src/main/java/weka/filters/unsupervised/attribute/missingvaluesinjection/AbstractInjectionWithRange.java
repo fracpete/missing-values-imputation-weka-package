@@ -13,9 +13,9 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
+/*
  * AbstractInjectionWithRange.java
- * Copyright (C) 2016 University of Waikato, Hamilton, New Zealand
+ * Copyright (C) 2016-2021 University of Waikato, Hamilton, New Zealand
  */
 package weka.filters.unsupervised.attribute.missingvaluesinjection;
 
@@ -35,7 +35,6 @@ import java.util.Vector;
  * Ancestor for injection algorithms that work on a range of attributes only.
  * 
  * @author  fracpete (fracpete at waikato dot ac dot nz)
- * @version $Revision$
  */
 public abstract class AbstractInjectionWithRange
   extends AbstractInjection {
@@ -120,8 +119,6 @@ public abstract class AbstractInjectionWithRange
     setInvertSelection(Utils.getFlag(INVERT_MATCHING, options));
 
     super.setOptions(options);
-
-    Utils.checkForRemainingOptions(options);
   }
 
   /**
