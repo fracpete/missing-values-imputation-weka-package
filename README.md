@@ -19,11 +19,14 @@ The imputation techniques listed below are available through the
 * `MeansAndModes` - like WEKA's `ReplaceMissingValues` filter
 * `MultiImputation` - applies the specified imputation algorithms sequentially
 * `SimpleNearestNeighbor` - uses nearest neighbor approach to determine most 
-   common label or average (date/numeric)
+  common label or average (date/numeric)
+* `SupervisedPrediction` - predicts missing values in a range of attributes by using regression/classification 
+  algorithms built on this attribute subset with the attribute that gets imputed as class attribute and the 
+  remainder of the attributes as input variables. 
 * `UserSuppliedValues` - simply replaces missing values with user-supplied ones
 * `IRMI` - [M. Templ et al (2011): Iterative stepwise regression imputation 
-   using standard and robust methods](http://www.statistik.tuwien.ac.at/public/filz/papers/CSDA11TKF.pdf)
-   (contributed by [Chris Beckham](https://github.com/christopher-beckham/weka-fimi))
+  using standard and robust methods](http://www.statistik.tuwien.ac.at/public/filz/papers/CSDA11TKF.pdf)
+  (contributed by [Chris Beckham](https://github.com/christopher-beckham/weka-fimi))
 
 
 Injection
@@ -46,6 +49,7 @@ Releases
 
 Click on one of the following links to download the corresponding Weka package:
 
+* [2022.6.29](https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2022.6.29/missing-values-imputation-2022.6.29.zip)
 * [2021.10.28](https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2021.10.28/missing-values-imputation-2021.10.28.zip)
 * [2016.6.12](https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.12/missing-values-imputation-2016.6.12.zip)
 * [2016.6.10](https://github.com/fracpete/missing-values-imputation-weka-package/releases/download/v2016.6.10/missing-values-imputation-2016.6.10.zip)
@@ -69,7 +73,7 @@ Add the following dependency in your `pom.xml` to include the package:
     <dependency>
       <groupId>com.github.fracpete</groupId>
       <artifactId>missing-values-imputation-weka-package</artifactId>
-      <version>2021.10.28</version>
+      <version>2022.6.29</version>
       <type>jar</type>
       <exclusions>
         <exclusion>
